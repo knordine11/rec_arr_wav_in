@@ -3,14 +3,23 @@
 #include <QTimer>
 #include <QDebug>
 #include <iostream>
+#include <QUrl>
+
 
 using namespace std;
 int frame_no = 100;
+QByteArray rec_arr;
 
 audio_in_from_wav::audio_in_from_wav()
+{    
+
+}
+
+void audio_in_from_wav::load_selected_file(QString filename)
 {
-    QByteArray rec_arr;
-    QFile in("C:/QtWorking/fileTest2/v43.wav");
+    //filename = "v43.wav";
+    filenameChosen = "C:/QtWorking/rec_arr_wav_in/v_sounds/" + filename;
+    QFile in(filenameChosen);
     if (!in.open(QIODevice::ReadOnly))
     {
         cout << "not opened" << endl;
@@ -26,5 +35,6 @@ audio_in_from_wav::audio_in_from_wav()
         qDebug() << i << "->" << t1;
     }
     cout << "data length = " << rec_arr.size() << endl;
+    qDebug() << "filename..." <<  filename;
     cout << "exiting..." << endl;
 }

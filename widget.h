@@ -16,9 +16,11 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    QString filename = "";
 
 private slots:
     void on_btnGetWav_clicked();
+    void soundNew();
 
 private:
     Ui::Widget *ui;

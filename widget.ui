@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>400</width>
     <height>200</height>
    </rect>
   </property>
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="btnGetWav">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>60</y>
+     <x>20</x>
+     <y>40</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -29,6 +29,77 @@
    </property>
    <property name="text">
     <string>Get Wave File</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cboWaveFile">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>40</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>v43.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v45.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v47.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v48.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v50.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v52.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v54.wav</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>v55.wav</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>20</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choose a wav file</string>
    </property>
   </widget>
  </widget>
