@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets core
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets core multimedia
 
 CONFIG += c++17
 
@@ -10,11 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     audio_in_from_wav.cpp \
+    fftstuff.cpp \
     main.cpp \
     widget.cpp
 
 HEADERS += \
     audio_in_from_wav.h \
+    fftstuff.h \
     fftw3/fftw3.h \
     widget.h
 
@@ -46,3 +48,8 @@ DISTFILES += \
 
 RESOURCES += \
     Resources.qrc
+
+INCLUDEPATH += $$PWD/fftw3
+DEPENDPATH += $$PWD/fftw3
+
+unix|win32: LIBS += -L$$PWD/fftw3/ -llibfftw3-3 -llibfftw3f-3 -llibfftw3l-3

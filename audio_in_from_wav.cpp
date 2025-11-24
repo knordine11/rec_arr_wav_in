@@ -4,6 +4,10 @@
 #include <QDebug>
 #include <iostream>
 #include <QUrl>
+#include <QMediaPlayer>
+#include <QAudioDevice>
+#include <QAudioOutput>
+#include <QMediaDevices>
 
 
 using namespace std;
@@ -11,13 +15,12 @@ int frame_no = 100;
 QByteArray rec_arr;
 
 audio_in_from_wav::audio_in_from_wav()
-{    
+{
 
 }
 
 void audio_in_from_wav::load_selected_file(QString filename)
 {
-    //filename = "v43.wav";
     filenameChosen = "C:/QtWorking/rec_arr_wav_in/v_sounds/" + filename;
     QFile in(filenameChosen);
     if (!in.open(QIODevice::ReadOnly))
@@ -34,6 +37,11 @@ void audio_in_from_wav::load_selected_file(QString filename)
         float t1 = (float) t/1000;
         qDebug() << i << "->" << t1;
     }
+    // Create a media player object
+    m_player = new QMediaPlayer();
+    m_audioOutput = new QAudioOutput();
+    m_player->setAudioOutput(m_audioOutput);
+    m_player->setSource(filenameChosen);
     cout << "data length = " << rec_arr.size() << endl;
     qDebug() << "filename..." <<  filename;
     cout << "exiting..." << endl;

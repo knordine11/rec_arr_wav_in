@@ -18,17 +18,17 @@
     <rect>
      <x>20</x>
      <y>40</y>
-     <width>131</width>
-     <height>71</height>
+     <width>71</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>16</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Get Wave File</string>
+    <string>Play</string>
    </property>
   </widget>
   <widget class="QComboBox" name="cboWaveFile">

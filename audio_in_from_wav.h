@@ -1,7 +1,11 @@
 #ifndef AUDIO_IN_FROM_WAV_H
 #define AUDIO_IN_FROM_WAV_H
 
-#include <QObject>
+#include <QIODevice>
+#include <QMediaPlayer>
+#include <QAudioDevice>
+#include <QAudioOutput>
+#include <QMediaDevices>
 
 class audio_in_from_wav
 {
@@ -10,6 +14,8 @@ public:
     void load_selected_file(QString filename);
     QString filenameChosen;
     QString filename;
+    QMediaPlayer *m_player = nullptr;
+    QAudioOutput *m_audioOutput = nullptr;
 };
 
 #endif // AUDIO_IN_FROM_WAV_H
