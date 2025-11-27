@@ -2,6 +2,10 @@
 
 #include <QApplication>
 
+double rec_arr[1000000];
+int rec_arr_cnt = 0;
+int arr_size = 0;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

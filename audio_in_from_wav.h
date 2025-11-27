@@ -7,6 +7,10 @@
 #include <QAudioOutput>
 #include <QMediaDevices>
 
+extern double rec_arr[];
+extern int rec_arr_cnt;
+extern int arr_size;
+
 class audio_in_from_wav
 {
 public:
