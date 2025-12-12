@@ -48,46 +48,6 @@
    <property name="frame">
     <bool>true</bool>
    </property>
-   <item>
-    <property name="text">
-     <string>v43.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v45.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v47.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v48.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v50.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v52.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v54.wav</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>v55.wav</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">

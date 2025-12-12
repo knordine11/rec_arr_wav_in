@@ -12,7 +12,7 @@
 
 
 using namespace std;
-int frame_no = 100;
+int frame_no = 18;
 QByteArray qb_rec_arr;
 
 audio_in_from_wav::audio_in_from_wav()
@@ -45,15 +45,15 @@ void audio_in_from_wav::load_selected_file(QString filename)
         float t1 = (float) t/1000;
         rec_arr[i] = t1;
         rec_arr_cnt++;
-        qDebug() << i << "->" << t1;
+        //qDebug() << i << "->" << t1;
     }
-    for (int i = 0; i < 512; i += 2)
-    {
-        qDebug() << rec_arr[i];
-    }
+    // for (int i = 0; i < 512; i += 2)
+    // {
+    //     qDebug() << rec_arr[i];
+    // }
     qDebug() << rec_arr_cnt;
     FftStuff test;
-    test.DoIt(80,100);
+    test.DoIt(1,511);
 
     cout << "data length = " << qb_rec_arr.size() << endl;
     qDebug() << "filename..." <<  filename;

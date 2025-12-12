@@ -12,7 +12,14 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    // ui->cboWaveFile->addItem("v57.wav");
+    ui->cboWaveFile->addItem("v43.wav");
+    ui->cboWaveFile->addItem("v45.wav");
+    ui->cboWaveFile->addItem("v47.wav");
+    ui->cboWaveFile->addItem("v48.wav");
+    ui->cboWaveFile->addItem("v50.wav");
+    ui->cboWaveFile->addItem("v52.wav");
+    ui->cboWaveFile->addItem("v54.wav");
+    ui->cboWaveFile->addItem("v55.wav");
     qDebug() << ui->cboWaveFile->currentText();
     filename = ui->cboWaveFile->currentText();
     // Create a media player object
