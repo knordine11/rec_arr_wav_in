@@ -73,7 +73,7 @@ void FftStuff::DoIt(int beg, int lengh)
 
     int at=beg;
     int end_at = beg+lengh;
-    look_rec_arr(beg,end_at);
+    // look_rec_arr(beg,end_at);
 
     for (int i = 0; i < N; i++)
     {
@@ -105,7 +105,7 @@ void FftStuff::DoIt(int beg, int lengh)
             // double cur_bin = bin_freq(i, N, Fs);
             double cur_bin = i * Fs/N;
             // std::cout<<i<<"  " << bin_freq(i, N, Fs) << " Hz : " << abs(out[i]) << std::endl;}
-            std::cout<<i<<"  " << cur_bin << " Hz : " << abs(out[i]) << std::endl;
+            // std::cout<<i<<"  " << cur_bin << " Hz : " << abs(out[i]) << std::endl;
         }
 
     }
@@ -113,22 +113,31 @@ void FftStuff::DoIt(int beg, int lengh)
     cout << endl << "  got here    PROCESSES FFT OUTPUT   AND GET TRUE PEAKS "<<endl<<endl;
 
     Flag_up = true;
+    double peak = 100.4;
     peak_val = 0;
     double last_lev = 0;
     int last_peak = 0;
     double last_peak_val =0;
     bool up = true;
     bool peak_looking = true;
+    double highest_val = 0;
+    double peak_capture = 0.0;
 
     for(int i = 20; i<6000; i++){
         double val_out = abs(out[i]);
         // cout << i <<" ll "<< last_lev<<" vo "<<val_out <<endl<<endl;
+        if(highest_val<last_lev){
+            highest_val = last_lev;
+            int peak = i-1;
+            peak_capture = peak;
+        }
         if(up)
         {
             if(last_lev > val_out)
             { // peak found @ i-1
-                int peak = i-1;
-                cout<< " FOUND PEAK AT  BIN  "<< peak <<"  :  " << last_lev << endl;
+                // int peak = i-1;
+                // cout<< " FOUND PEAK AT  BIN  "<< peak <<"  :  " << last_lev << endl;
+
                 if(peak_looking)
                 {
                     if(last_peak_val>last_lev){
@@ -151,6 +160,7 @@ void FftStuff::DoIt(int beg, int lengh)
         }
         last_lev = val_out;
     }
+    cout << "bin :" << peak_capture << "max = " << highest_val << endl;
     cout <<endl<< "    ----- AT END OF   DOIT --------" <<endl;
 }
 

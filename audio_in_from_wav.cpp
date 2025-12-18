@@ -9,10 +9,11 @@
 #include <QAudioDevice>
 #include <QAudioOutput>
 #include <QMediaDevices>
+#include <unistd.h>
 
 
 using namespace std;
-int frame_no = 18;
+int frame_no = 30;
 QByteArray qb_rec_arr;
 
 audio_in_from_wav::audio_in_from_wav()
@@ -36,10 +37,10 @@ void audio_in_from_wav::load_selected_file(QString filename)
         cout << "not opened" << endl;
     }
     qb_rec_arr = in.readAll();
-    qDebug() << qb_rec_arr.size();
-    // shows the header
-    QByteArray temp = qb_rec_arr.slice(44 + frame_no * 1024, (frame_no * 1024) + 1024);
-    for (int i=0; i < 1024; i += 2)
+    int qb_size = qb_rec_arr.size();
+    // strip the header convert to float
+    QByteArray temp = qb_rec_arr.slice(44, qb_size - 44);
+    for (int i=0; i < qb_size - 44; i += 2)
     {
         int t = abs(temp[i]) + temp[i+1] * 255;
         float t1 = (float) t/1000;
@@ -53,7 +54,12 @@ void audio_in_from_wav::load_selected_file(QString filename)
     // }
     qDebug() << rec_arr_cnt;
     FftStuff test;
-    test.DoIt(1,511);
+    for(int i = 1; i<20; ++i)
+    {
+        qDebug() << "-->" << i;
+        test.DoIt(i*2048,i*2048+2048);
+        sleep(1);
+    }
 
     cout << "data length = " << qb_rec_arr.size() << endl;
     qDebug() << "filename..." <<  filename;
