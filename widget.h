@@ -5,6 +5,12 @@
 #include <QMediaPlayer>
 #include <QUrl>
 
+extern double rec_arr[];
+extern int rec_arr_cnt;
+extern int arr_size;
+extern int frame_total;
+extern int frame_width;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -25,6 +31,7 @@ public:
 private slots:
     void on_btnGetWav_clicked();
     void soundNew();
+    void on_btnNextFrame_clicked();
 
 private:
     Ui::Widget *ui;

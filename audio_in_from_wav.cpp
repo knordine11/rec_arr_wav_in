@@ -13,7 +13,7 @@
 
 
 using namespace std;
-int frame_no = 30;
+
 QByteArray qb_rec_arr;
 
 audio_in_from_wav::audio_in_from_wav()
@@ -21,7 +21,7 @@ audio_in_from_wav::audio_in_from_wav()
 
 }
 
-void audio_in_from_wav::load_selected_file(QString filename)
+void audio_in_from_wav::load_selected_file(QString filename, int next_frame)
 {
     filenameChosen = "C:/QtWorking/rec_arr_wav_in/v_sounds/" + filename;
 
@@ -48,20 +48,23 @@ void audio_in_from_wav::load_selected_file(QString filename)
         rec_arr_cnt++;
         //qDebug() << i << "->" << t1;
     }
-    // for (int i = 0; i < 512; i += 2)
-    // {
-    //     qDebug() << rec_arr[i];
-    // }
     qDebug() << rec_arr_cnt;
-    FftStuff test;
-    for(int i = 1; i<20; ++i)
-    {
-        qDebug() << "-->" << i;
-        test.DoIt(i*2048,i*2048+2048);
-        sleep(1);
-    }
+    frame_total = rec_arr_cnt/frame_width -1;    
 
-    cout << "data length = " << qb_rec_arr.size() << endl;
+    FftStuff test;    
+    qDebug() << "-->" << next_frame;
+    test.DoIt(next_frame*frame_width,next_frame*frame_width+frame_width);
+
+    cout << "data length on input = " << qb_rec_arr.size() << endl;
+    cout << "data length on output = " << rec_arr_cnt << endl;
+    qDebug() << frame_total;
     qDebug() << "filename..." <<  filename;
     cout << "exiting..." << endl;
+}
+
+void audio_in_from_wav::process_next_frame(int frame_no)
+{
+    FftStuff test;
+    qDebug() << "-->" << frame_no;
+    test.DoIt(frame_no*frame_width,frame_no*frame_width+frame_width);
 }

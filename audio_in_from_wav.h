@@ -10,12 +10,15 @@
 extern double rec_arr[];
 extern int rec_arr_cnt;
 extern int arr_size;
+extern int frame_total;
+extern int frame_width;
 
 class audio_in_from_wav
 {
 public:
     audio_in_from_wav();
-    void load_selected_file(QString filename);
+    void load_selected_file(QString filename, int next_frame);
+    void process_next_frame(int frame_no);
     QString filenameChosen;
     QString filename;
     QMediaPlayer *m_player = nullptr;

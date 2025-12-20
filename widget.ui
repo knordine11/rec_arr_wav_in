@@ -7,8 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>200</height>
+    <height>224</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>16</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
@@ -17,7 +22,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>40</y>
+     <y>54</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -34,8 +39,8 @@
   <widget class="QComboBox" name="cboWaveFile">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>40</y>
+     <x>120</x>
+     <y>54</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -52,14 +57,100 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>20</y>
+     <x>120</x>
+     <y>10</y>
      <width>151</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Choose a wav file</string>
+    <string>Choose file</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnNextFrame">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>144</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Next Frame</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbFrame">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>124</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Current Frame</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtFrame">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>144</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtFrameTotal">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>54</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbFrameTotal">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>30</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Total Frames</string>
    </property>
   </widget>
  </widget>

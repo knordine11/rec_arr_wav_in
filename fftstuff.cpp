@@ -73,7 +73,6 @@ void FftStuff::DoIt(int beg, int lengh)
 
     int at=beg;
     int end_at = beg+lengh;
-    // look_rec_arr(beg,end_at);
 
     for (int i = 0; i < N; i++)
     {
@@ -113,7 +112,7 @@ void FftStuff::DoIt(int beg, int lengh)
     cout << endl << "  got here    PROCESSES FFT OUTPUT   AND GET TRUE PEAKS "<<endl<<endl;
 
     Flag_up = true;
-    double peak = 100.4;
+    double peak = 0;
     peak_val = 0;
     double last_lev = 0;
     int last_peak = 0;
